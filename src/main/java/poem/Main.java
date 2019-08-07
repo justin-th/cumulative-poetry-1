@@ -1,4 +1,6 @@
-package main.java;
+package poem;
+
+import java.io.IOException;
 
 class Main {
 
@@ -6,11 +8,15 @@ class Main {
 
     public static void main(String args[]) {
         // ToDo: Load the poem
-        poem = new Poem(); // ToDo: Filename and Exception handling
+        try {
+            poem = new Poem();
+        } catch (IOException exception) {
+            System.err.println();
+        }
         // Processing command-line arguments
         int index = -1;
         if (args.length < 2 || args.length > 3) {
-            System.out.println("Invalid argument count. Exiting...");
+            System.err.println("Invalid argument count. Exiting...");
             System.exit(0);
         } else if (args.length == 2 && args[1].equals("--recite")) {
             // ToDo: Recite the poem
@@ -18,12 +24,12 @@ class Main {
             try {
                 index = Integer.parseInt(args[2]);
                 if (index > poem.getLength()) {
-                    System.out.println(String.format("The poem is just %d lines long. Exiting...", poem.getLength()));
+                    System.err.println(String.format("The poem is just %d lines long. Exiting...", poem.getLength()));
                 } else {
                     // ToDo: Reveal for the day
                 }
             } catch (NumberFormatException exception) {
-                System.out.println("Option 'reveal-for-day' must be followed by an integer. Exiting...");
+                System.err.println("Option 'reveal-for-day' must be followed by an integer. Exiting...");
                 System.exit(0);
             }
         }

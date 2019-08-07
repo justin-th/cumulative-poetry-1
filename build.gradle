@@ -1,1 +1,19 @@
 apply plugin: "java"
+
+// Note: Testing
+task createJar(type: Jar) {
+    def included = ['poem/Main.class',
+                    'poem/Poem.class']
+   include { f ->
+      included.any { i -> f.isDirectory() ? true : f.path.replaceAll(File.separator, '.').contains(i) }
+   }
+    // version = '1.0'
+    // manifest {
+    //     attributes 'Implementation-Title': 'Gradle Jar File Example',
+    //             'Implementation-Version': version,
+    //             'Main-Class': 'main/java/poem/*.class'
+    // }
+    // baseName = "poem"
+    // from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    // with jar
+}

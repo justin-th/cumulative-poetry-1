@@ -9,14 +9,14 @@ class Main {
         if (args.length == 2) {
             File poemFile = new File(args[1]);
             if (!poemFile.exists() || poemFile.isDirectory()) {
-                System.out.println("File not found. Exiting...");
+                System.err.println("File not found. Exiting...");
             } else {
                 // Do things
                     // Extract main jar resource
                     // Append poem as resource
             }
         } else {
-            System.out.println("Invalid arguments. Exiting...");
+            System.err.println("Invalid arguments. Exiting...");
         }
     }
 
