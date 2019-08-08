@@ -6,7 +6,7 @@ class ArgumentParser {
 
     // Return a stream from default poem
     private InputStream getFileStream() {
-        return getClass().getClassLoader().getResourceAsStream("poem");
+        return getClass().getClassLoader().getResourceAsStream("defaultPoem.txt");
     }
 
     // Gets an input stream from file path specified
