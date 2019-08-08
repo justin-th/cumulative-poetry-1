@@ -1,0 +1,13 @@
+.classpath
+.gradle/
+.idea/
+.project
+.settings/
+bin/
+build/
+cumulative-poetry-1.iml
+gradle/
+gradlew
+gradlew.bat
+!build/libs/reciter.jar
+!build/libs/alternate.txt
